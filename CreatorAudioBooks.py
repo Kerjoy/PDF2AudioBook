@@ -72,11 +72,13 @@ paths_archivos = get_paths_files(direc_pdf)
 
 
 for path_archivo in paths_archivos:
-    print(path_archivo)
+    print("recording voice from: ", path_archivo)
     file_compress = voice_maker(path_archivo)
+    print("starting compression")
     compressor(file_compress)
-
-os.remove(direc_raw_to_compress + "Rawpy.mp3")
+    print ("finished compression")
+    os.remove(direc_raw_to_compress + "Rawpy.mp3")
+    #os.remove(path_archivo) #only if you need remove pdf once finished recording and compressing audiobook
 
 
 
